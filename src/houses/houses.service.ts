@@ -31,4 +31,13 @@ export class HousesService {
     }
   }
 
+  async delete(id) {
+    try {
+      const result = await this.houseModel.deleteOne({_id: id})
+      return result
+    } catch (e){
+      throw new BadRequestException(e.message)
+    }
+  }
+
 }

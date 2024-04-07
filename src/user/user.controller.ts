@@ -1,9 +1,8 @@
-import { BadRequestException, Body, Controller, Get, HttpCode, HttpException, HttpStatus, NotFoundException, Post, UsePipes, ValidationPipe } from '@nestjs/common';
+import { BadRequestException, Body, Controller, Get, HttpCode, NotFoundException, Post, UsePipes, ValidationPipe } from '@nestjs/common';
 import {
   ApiBearerAuth,
   ApiBody,
   ApiOperation,
-  ApiParam,
   ApiResponse,
   ApiTags,
 } from '@nestjs/swagger';
@@ -12,8 +11,6 @@ import { User } from './schemas/user.schema';
 import { UserEntity } from './user.entities';
 import { isEmpty } from 'lodash';
 import { md5 } from 'src/md5';
-
-type IDTYPE = { id: string }
 
 
 @ApiBearerAuth()
